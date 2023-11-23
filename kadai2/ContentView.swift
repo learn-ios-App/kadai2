@@ -10,10 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var number1 = ""
     @State private var number2 = ""
-    @State private var bmi = 0
-    
-    @State private var isAlert = false
-    
+    @State private var sum = 0
     var body: some View {
         VStack {
             VStack {
@@ -24,11 +21,11 @@ struct ContentView: View {
             .frame(width: 200)
             .padding()
             Button(action: {
-                bmi = parseNumber(number: number1) + parseNumber(number: number2)
+                sum = parseNumber(number: number1) + parseNumber(number: number2)
             }) {
                 Text("計算")
             }
-            Text("合計 \(bmi)")
+            Text("合計 \(sum)")
                 .padding()
         }
     }
